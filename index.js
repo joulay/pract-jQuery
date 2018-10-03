@@ -7,6 +7,16 @@ const STORE = [
   {name: "bread", checked: false}
 ];
 
+function generateShoppingItemsString(shoppingList) {
+    console.log("Generating shopping list element");
+  
+    return `
+      <li>apples</li>
+      <li>oranges</li>
+      <li>milk</li>
+      <li>bread</li>
+    `;
+  }
 
 function renderShoppingList() {
   // render the shopping list in the DOM
