@@ -46,7 +46,9 @@ function renderShoppingList() {
 function handleNewItemSubmit() {
   $('#js-shopping-list-form').submit(function(event) {
     event.preventDefault();
-    console.log('`handleNewItemSubmit` ran');
+    const newItemName = $('.js-shopping-list-entry').val();
+    console.log(newItemName);
+    $('.js-shopping-list-entry').val('');
   });
 }
 
@@ -73,7 +75,6 @@ function handleShoppingList() {
   handleNewItemSubmit();
   handleItemCheckClicked();
   handleDeleteItemClicked();
-
 }
 
 // when the page loads, call `handleShoppingList`
