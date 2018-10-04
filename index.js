@@ -43,12 +43,19 @@ function renderShoppingList() {
 }
 
 
+function addItemToShoppingList(itemName) {
+  console.log(`Adding "${itemName}" to shopping list`);
+  STORE.push({name: itemName, checked: false});
+}
+
 function handleNewItemSubmit() {
   $('#js-shopping-list-form').submit(function(event) {
     event.preventDefault();
+    console.log('`handleNewItemSubmit` ran');
     const newItemName = $('.js-shopping-list-entry').val();
-    console.log(newItemName);
     $('.js-shopping-list-entry').val('');
+    addItemToShoppingList(newItemName);
+    renderShoppingList();
   });
 }
 
