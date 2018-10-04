@@ -7,16 +7,21 @@ const STORE = [
   {name: "bread", checked: false}
 ];
 
+
+function generateItemElement(item, itemIndex, template) {
+  return `
+    <li>${item.name}</li>`;
+}
+
+
 function generateShoppingItemsString(shoppingList) {
-    console.log("Generating shopping list element");
+  console.log("Generating shopping list element");
+
+  const items = shoppingList.map((item, index) => generateItemElement(item, index));
   
-    return `
-      <li>apples</li>
-      <li>oranges</li>
-      <li>milk</li>
-      <li>bread</li>
-    `;
-  }
+  return items.join("");
+}
+
 
 function renderShoppingList() {
   // render the shopping list in the DOM
@@ -56,6 +61,7 @@ function handleShoppingList() {
   handleNewItemSubmit();
   handleItemCheckClicked();
   handleDeleteItemClicked();
+
 }
 
 // when the page loads, call `handleShoppingList`
